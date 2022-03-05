@@ -8,7 +8,7 @@ def extrair_fonte(page): #função que irá extrair a fonte das imagens
 re.IGNORECASE)
  return img_regex.findall(page)
 
-if __name__ == '__main__':
+if __name__ == '__main__': # Transforma os links em arquivos .txt
   for k in range(1,51):
      target_url = 'https://books.toscrape.com/catalogue/page-%d.html' %k
      page = download_pagina(target_url)
