@@ -2,4 +2,4 @@
 
 Repositório de web scraping em python utilizando BeautifulSoup
 
-https://webscraper.io/test-sites/e-commerce/allinone -> Página utilizada como teste
+https://books.toscrape.com/-> Página utilizada como teste
