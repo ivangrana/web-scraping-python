@@ -9,6 +9,6 @@ print(texts)
 
 #Criação de um arquivo .txt para armazenar o texto raspado
 
-file = open("texto_pagina.txt",'w')
-file.write(texts)
+file = open("texto_pagina.txt",'w') 
+file.write(texts) #Insere o texto raspado no arquivo .txt
 file.close()
