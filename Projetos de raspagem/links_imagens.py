@@ -1,16 +1,21 @@
-import requests
-import re
+from bs4 import BeautifulSoup
+import requests,random
+links = []
+url = 'https://books.toscrape.com/catalogue/page-1.html'
+pagina = requests.get(url)
 
-#Extração de links de imagens de uma página
 
-url = input("Inserir URL -> ")
+#raspagem dos links das imagens
+soup = BeautifulSoup(pagina.text, 'html.parser') 
+for item in soup.find_all('img'):
+    links.append('https://books.toscrape.com/' + item['src']) 
+links = list(set(links))
 
-var = requests.get(url).text
-
-print("Links de imagens:")
-for image in re.findall("<img (.*)>",var):
-    for images in image.split():
-        if re.findall("src=(.*)",images):
-            image = images[:-1].replace("src=\"","")
-        if(image.startswith("http")):
-            print(image)
+#download das imagens
+for item in links:
+        try:
+            img_data = requests.get(item).content
+            with open('{}.jpg'.format(random.randint(1,100000)), 'wb') as handler:
+                handler.write(img_data)
+        except:
+            pass
