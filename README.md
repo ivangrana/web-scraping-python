@@ -1,6 +1,6 @@
 # web-scraping-python
 
-Repositório de web scraping em python utilizando BeautifulSoup
+Repositório de web scraping em python utilizando BeautifulSoup, requests, scrapy e pandas
 
 -> Páginas utilizadas como teste:
 
